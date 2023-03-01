@@ -1,4 +1,4 @@
-**== install SSH Client to access other servers through SSH ==**
+##== install SSH Client to access other servers through SSH ==
 ####yum install openssh-client
 
 -- Test --
