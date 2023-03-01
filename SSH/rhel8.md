@@ -1,5 +1,5 @@
 **== install SSH Client to access other servers through SSH ==**
-yum install openssh-client
+####yum install openssh-client
 
 -- Test --
 ssh user@192.168.1.2
