@@ -9,7 +9,7 @@ yum install net-tools \
 yum install NetworkManager
 
 #### -- Ubuntu --
-sudo apt install net-tools  
+sudo apt install net-tools
 sudo apt-get install network-manager
 
 ### == Start/Enable Service ==
