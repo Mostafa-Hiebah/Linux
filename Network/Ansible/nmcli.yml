@@ -1,0 +1,14 @@
+---
+- name: NMCLI Playbook
+  hosts: ubuntu1
+  become: true
+  tasks:
+    - name: nmcli module
+      nmcli:
+        conn_name: lab2
+        ifname: ens38
+        type: ethernet
+        ip4: 192.168.233.13/24
+        gw4: 192.168.233.1
+        state: present
+        autoconnect: true
