@@ -1,2 +1,0 @@
-[ubuntu]
-node1 ansible_host=192.168.255.134 ansible_become_password=P@ssw0rd
