@@ -1,0 +1,63 @@
+---
+- hosts: redhat
+  tasks: 
+    - name: Print all_ipv4_addresses on {{ ansible_facts['fqdn'] }}
+      debug:
+        msg:
+          - "all_ipv4_addresses: {{ ansible_facts['all_ipv4_addresses'] }} "
+
+    - name: Print default_ipv4 on {{ ansible_facts['fqdn'] }}
+      debug:
+        msg:
+          - "address: {{ ansible_facts['default_ipv4']['address'] }} "
+          - "netmask: {{ ansible_facts['default_ipv4']['netmask'] }} "
+          - "gateway: {{ ansible_facts['default_ipv4']['gateway'] }} "
+          - "interface: {{ ansible_facts['default_ipv4']['interface'] }} "
+          - "type: {{ ansible_facts['default_ipv4']['type'] }} "
+                
+                
+    - name: Print date_time on {{ ansible_facts['fqdn'] }}
+      debug: 
+        msg: 
+          - "date_time[date]: {{ ansible_facts['date_time']['date'] }} "
+          - "date_time[day]: {{ ansible_facts['date_time']['day'] }} "
+          - "date_time[hour]: {{ ansible_facts['date_time']['hour'] }} "
+          - "date_time[minute]: {{ ansible_facts['date_time']['minute'] }} "
+          - "date_time[second]: {{ ansible_facts['date_time']['second'] }} "
+          - "date_time[month]: {{ ansible_facts['date_time']['month'] }} "
+          - "date_time[time]: {{ ansible_facts['date_time']['time'] }} "
+          - "date_time[year]: {{ ansible_facts['date_time']['year'] }} "
+
+
+    - name: Print distribution on {{ ansible_facts['fqdn'] }}
+      debug:
+        msg:
+          - "distribution: {{ ansible_facts['distribution'] }} "
+          - "distribution_version: {{ ansible_facts['distribution_version'] }} "
+    
+    - name: Print memory_mb on {{ ansible_facts['fqdn'] }}
+      debug:
+        msg:
+          - "memory_mb[total]: {{ ansible_facts['memory_mb']['real']['total'] }} "
+          - "memory_mb[free]: {{ ansible_facts['memory_mb']['real']['free'] }} "
+          - "memory_mb[used]: {{ ansible_facts['memory_mb']['real']['used'] }} "
+
+    - name: Print general info on {{ ansible_facts['fqdn'] }}
+      debug:
+        msg:
+          - "nodename: {{ ansible_facts['nodename'] }} "
+          - "hostname: {{ ansible_facts['hostname'] }} "
+          - "os_family: {{ ansible_facts['os_family'] }} "
+          - "pkg_mgr: {{ ansible_facts['pkg_mgr'] }} "
+          - "python_version: {{ ansible_facts['python_version'] }} "
+          - "service_mgr: {{ ansible_facts['service_mgr'] }} "
+          - "system: {{ ansible_facts['system'] }} "
+          - "uptime_seconds: {{ ansible_facts['uptime_seconds'] }} "
+          
+    - name: Print Selinux on {{ ansible_facts['fqdn'] }}
+      debug:
+        msg:
+          - "config_mode: {{ ansible_facts['selinux']['config_mode'] }} "
+          - "mode: {{ ansible_facts['selinux']['mode'] }} "
+          - "status: {{ ansible_facts['selinux']['status'] }} "
+          - "type: {{ ansible_facts['selinux']['type'] }} "
