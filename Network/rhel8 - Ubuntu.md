@@ -5,7 +5,7 @@
 ### == install network tools ==
 
 #### -- RedHat --
-yum install net-tools \
+yum install net-tools  
 yum install NetworkManager
 
 #### -- Ubuntu --
@@ -13,7 +13,7 @@ sudo apt install net-tools
 sudo apt-get install network-manager
 
 ### == Start/Enable Service ==
-systemctl start NetworkManager.service
+systemctl start NetworkManager.service  
 systemctl enable NetworkManager.service
 
 ### == Monitor when add/remove physical device ==
