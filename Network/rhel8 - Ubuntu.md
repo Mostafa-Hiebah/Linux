@@ -5,7 +5,7 @@
 ### == install network tools ==
 
 #### -- RedHat --
-yum install net-tools
+yum install net-tools \
 yum install NetworkManager
 
 #### -- Ubuntu --
