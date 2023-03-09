@@ -2,7 +2,7 @@
 #### - NIC may have more than one connection .. but one connection active per time .. show all connection using (ip a)
 
 
-### == install network tools ==
+### == install network tools ==  
 
 #### -- RedHat --
 yum install net-tools  
@@ -20,17 +20,17 @@ systemctl enable NetworkManager.service
 udevadm monitor
 
 ### == Network Service Status ==
-systemctl status NetworkManager
+systemctl status NetworkManager  
 
 ### == Show NIC Configuration ==
-ifconfig 
+ifconfig  
 
 ### == Change IP in runtime ==
-sudo ifconfig ens160 10.0.0.10/8
+sudo ifconfig ens160 10.0.0.10/8  
 
 ### == show routes/gate way (low metric is high priority) ==
-ip route
-route -n
+ip route  
+route -n  
 
 ### == Show Physical NIC Connected ==
 nmcli device
@@ -41,7 +41,7 @@ nmcli dev con ens224
 ### == Show NIC Connections ==
 nmcli con show
 
-### == show all config for NIC ==
+### == show all config for NIC ==  
 nmcli dev show ens160
 
 ### == Disconnect NIC (state unmanaged) in run time ==
@@ -60,26 +60,26 @@ sudo nmcli networking connectivity check
 nmcli general status
 
 ### == connection activate/re-read connection file for ens160 (refresh) ==
-nmcli connection up ens160
-nmcli connection down ens16
-sudo ifconfig ens38 up
-sudo ifconfig ens38 down
-
+nmcli connection up ens160  
+nmcli connection down ens16  
+sudo ifconfig ens38 up  
+sudo ifconfig ens38 down  
+ 
 ### == enter interactive mode editor ==
-nmcli connection edit Wired\ connection\ 2
-nmcli connection edit ens160
+nmcli connection edit Wired\ connection\ 2  
+nmcli connection edit ens160  
 
 ### == Delete Connection ==
-nmcli connection delete ens160
+nmcli connection delete ens160  
 
 ### == Create Connection by default config (dhcp) ==
-nmcli device connect ens160
+nmcli device connect ens160  
 
 ### == Add more connection for one interface/Activate Connection on interface ==
-nmcli connection add type ethernet con-name test160 ifname ens160 ipv4.method manual ipv4.addresses 192.168.1.6/24 ipv4.gateway 192.168.1.1 ipv4.dns 192.168.1.1 connection.autoconnect yes
-nmcli connection up test160
+nmcli connection add type ethernet con-name test160 ifname ens160 ipv4.method manual ipv4.addresses 192.168.1.6/24 ipv4.gateway 192.168.1.1 ipv4.dns 192.168.1.1     connection.autoconnect yes  
+nmcli connection up test160  
 
-nmcli connection modify .....
+nmcli connection modify .....  
 
 ### == release ==
 dhclient -r ens160
