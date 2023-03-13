@@ -1,0 +1,11 @@
+---
+- hosts: redhat1
+  vars_files: ../custom_vars/vars
+  tasks:
+    - name: nmcli with Variable
+      nmcli:
+        type: ethernet
+        conn_name: "{{ con_name }}"
+        ip4: "{{ ip }}"
+        gw4: "{{ gateway }}"
+        state: present
