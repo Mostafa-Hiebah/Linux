@@ -1,0 +1,12 @@
+
+
+[redhat]
+redhat1  ansible_host=192.168.255.253
+
+
+[ubuntu]
+ubuntu1 ansible_host=192.168.255.134 ansible_become_password=P@ssw0rd
+
+[infra:children]
+redhat
+ubuntu
