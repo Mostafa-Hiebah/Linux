@@ -1,0 +1,10 @@
+  <system.web>
+    <httpRuntime enableVersionHeader="false" targetFramework="4.6.1" />
+  </system.web>
+
+protected void Application_Start()
+{
+    MvcHandler.DisableMvcResponseHeader = true;
+}
+
+
