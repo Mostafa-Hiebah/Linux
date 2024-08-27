@@ -1,1 +1,2 @@
 
+basic bash commands
